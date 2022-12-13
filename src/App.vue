@@ -24,6 +24,17 @@ body,
   margin: 0;
   padding: 0;
 }
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+}
 nav {
   padding: 30px;
 
@@ -58,5 +69,10 @@ li {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+.centerWidth {
+  /* width: 1596px; */
+  width: 1200px;
+  margin: 0 auto;
 }
 </style>

@@ -96,11 +96,14 @@
         </div>
       </div>
     </main>
+    <FooterBar />
   </div>
 </template>
 
 <script>
+import FooterBar from "@/components/FooterBar.vue";
 export default {
+  components: { FooterBar },
   name: "LazyLoad",
   data() {
     return {
@@ -163,7 +166,7 @@ export default {
     },
     // 左侧tab栏数据
     getlistall() {
-      // this.$showLoading();
+      this.$showLoading();
       this.$api.typeall({}).then((res) => {
         console.log(res);
         this.table_list = res.data;
@@ -172,7 +175,7 @@ export default {
     },
     // 图片列表数据
     listChange(key) {
-      this.$showLoading();
+      // this.$showLoading();
       this.list_pic = [];
       console.log(key);
       this.$api.listshow({ type: key }).then((res) => {
@@ -199,6 +202,11 @@ body {
 header {
   background: #fff;
   box-shadow: 0 0 5px #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
   .top_log {
     display: flex;
     justify-content: space-between;
@@ -239,9 +247,12 @@ header {
 }
 main {
   // margin-top: 50px;
-  height: 100%;
+  height: 89%;
   padding: 40px 0;
   box-sizing: border-box;
+  // margin-top: 68px;
+  position: relative;
+  top: 68px;
   .pay_list {
     display: flex;
     height: 100%;
@@ -400,6 +411,7 @@ main {
   main {
     width: 100%;
     padding: 10px 0;
+    height: 82%;
     .pay_list {
       width: 100%;
       .left_nav_bar {

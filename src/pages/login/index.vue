@@ -392,7 +392,7 @@ export default {
     .right_login_sub {
       padding-top: 20px;
       .form_login .form_li .password_p .eye {
-        right: 37px;
+        right: 80px;
       }
     }
   }
